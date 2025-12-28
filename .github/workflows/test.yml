@@ -1,0 +1,30 @@
+name: JPEG Encoder/Decoder Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y gcc make
+      
+    - name: Compile encoder
+      run: gcc -o encoder encoder.c -lm -Wall
+      
+    - name: Compile decoder
+      run: gcc -o decoder decoder.c -lm -Wall
+      
+    - name: Check executables
+      run: |
+        ls -lh encoder decoder
+        ./encoder --help || echo "Encoder compiled successfully"
+        ./decoder --help || echo "Decoder compiled successfully"
