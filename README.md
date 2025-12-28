@@ -229,7 +229,6 @@ gcc -o decoder decoder.c -lm
 
 最有成就感的時刻是看到 Huffman 編碼達到 38:1 的壓縮率，以及所有測試都通過的那一刻。這個專案不僅是程式設計的練習，更是對多媒體信號處理理論的實踐與驗證。
 
-**特別感謝：** Claude AI 在除錯過程中提供的協助，特別是在 BMP header 保存和記憶體管理問題上的指導。
 
 ---
 
@@ -256,5 +255,5 @@ gcc -o decoder decoder.c -lm
 
 ---
 
-**GitHub Repository:** [你的 GitHub 連結]  
+**GitHub Repository:** https://github.com/Jason-Chen11/mmsp-2025-final-jpeg 
 **最後更新：** 2025/12/28
